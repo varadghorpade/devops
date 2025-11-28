@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Network IDS/IPS Tools</title>
+<style>
+    /* Dark theme base colors */
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+        overflow-x: hidden;
+    }
+    header {
+        padding: 20px;
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: bold;
+        letter-spacing: 2px;
+        background: linear-gradient(45deg, #0ff, #08f);
+        color: #0ff;
+        box-shadow: 0 4px 15px rgba(0,255,255,0.4);
+        text-shadow: 0 0 10px #0ff;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    .card {
+        background: #1c1c1c;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,255,255,0.1);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+    .card:hover {
+        box-shadow: 0 8px 40px rgba(0,255,255,0.7);
+        transform: translateY(-10px);
+    }
+    .card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, #0ff, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        z-index: 0;
+    }
+    .card:hover::before {
+        opacity: 0.15;
+    }
+    .icon {
+        font-size: 4em;
+        margin-bottom: 15px;
+        color: #0ff;
+        z-index: 1;
+        text-shadow: 0 0 15px #0ff;
+    }
+    h3 {
+        margin: 0 0 10px;
+        text-align: center;
+        z-index: 1;
+        color: #0ff;
+    }
+    p {
+        font-size: 0.9em;
+        text-align: center;
+        color: #bbb;
+        line-height: 1.4em;
+        z-index: 1;
+    }
+    .btn {
+        margin-top: 15px;
+        background: linear-gradient(45deg, #0ff, #08f);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        color: #121212;
+        font-size: 1em;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 6px 14px rgba(0,255,255,0.5);
+        transition: all 0.3s ease;
+        z-index: 1;
+    }
+    .btn:hover {
+        box-shadow: 0 12px 30px rgba(0,255,255,0.8);
+        transform: scale(1.1);
+        background: linear-gradient(45deg, #08f, #0ff);
+        color: #fff;
+    }
+    /* Animations for header text */
+    @keyframes glow {
+        0%, 100% { text-shadow: 0 0 10px #0ff, 0 0 20px #08f; }
+        50% { text-shadow: 0 0 20px #0ff, 0 0 40px #08f; }
+    }
+    header {
+        animation: glow 2.5s ease-in-out infinite;
+    }
+    /* Fade-in cards on load */
+    .card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+</head>
+<body>
+<header>Cyber Network IDS/IPS Tools</header>
+<div class="container">
+    <div class="card" tabindex="0">
+        <div class="icon">🛡️</div>
+        <h3>Snort IDS</h3>
+        <p>Open-source network intrusion detection and prevention system.</p>
+        <button class="btn" onclick="alert('Learn more about Snort IDS')">Details</button>
+    </div>
+    <div class="card" tabindex="0">
+        <div class="icon">🔍</div>
+        <h3>Suricata IDS</h3>
+        <p>High-performance network IDS/IPS with multi-threading support.</p>
+        <button class="btn" onclick="alert('Learn more about Suricata IDS')">Details</button>
+    </div>
+    <div class="card" tabindex="0">
+        <div class="icon">⚙️</div>
+        <h3>Zeek (Bro)</h3>
+        <p>Network analysis framework for security monitoring and network traffic analysis.</p>
+        <button class="btn" onclick="alert('Learn more about Zeek IDS')">Details</button>
+    </div>
+    <div class="card" tabindex="0">
+        <div class="icon">🕵️‍♂️</div>
+        <h3>OSSEC</h3>
+        <p>Host-based intrusion detection system for comprehensive security monitoring.</p>
+        <button class="btn" onclick="alert('Learn more about OSSEC')">Details</button>
+    </div>
+</div>
+<script>
+    // Add some button click animations
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('mousedown', () => {
+            button.style.transform = 'scale(0.95)';
+        });
+        button.addEventListener('mouseup', () => {
+            button.style.transform = 'scale(1)';
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'scale(1)';
+        });
+    });
+</script>
+</body>
+</html>
